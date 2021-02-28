@@ -5,14 +5,16 @@
       <p>nothingness</p>
     </div>
 
-    <audio
-      id="alanwatts"
-      controls
-      class="absolute bottom-0 right-0 border-0"
-      autoplay
-      muted
-      :src="require('@/assets/EVERYTHING.mp3')"
-    ></audio>
+    <iframe
+      id="audio"
+      :src="require('@/assets/silence.mp3')"
+      type="audio/mp3"
+      allow="autoplay"
+      style="display: none"
+    ></iframe>
+    <audio autoplay controls class="absolute top-0 right-0 border-0">
+      <source :src="require('@/assets/EVERYTHING.mp3')" type="audio/mp3" />
+    </audio>
   </div>
 </template>
 
