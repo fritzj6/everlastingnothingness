@@ -1,33 +1,24 @@
 <template>
   <div class="static container bg-black max-w-none max-h-full text-white">
-    <div class="flex flex-col font-mono">
-      <p>everlasting</p>
-      <p>nothingness</p>
-    </div>
-
-    <iframe
-      id="audio"
-      :src="require('@/assets/silence.mp3')"
-      type="audio/mp3"
-      allow="autoplay"
-      style="display: none"
-    ></iframe>
-    <audio autoplay controls class="absolute top-0 right-0 border-0">
-      <source :src="require('@/assets/EVERYTHING.mp3')" type="audio/mp3" />
-    </audio>
+    <img
+      class="cropped animate__animated headShake"
+      src="@/assets/logo.png"
+      alt="everlasting nothingness"
+    />
+    <audio
+      id="alanwatts"
+      controls
+      class="absolute bottom-0"
+      autoplay
+      muted
+      :src="require('@/assets/EVERYTHING.mp3')"
+    ></audio>
   </div>
 </template>
 
-<script>
-export default {}
-</script>
+<script></script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -37,31 +28,9 @@ export default {}
   text-align: center;
 }
 
-/* Specifies the size of the audio container */
-audio {
-  width: 115px;
-  height: 25px;
-}
-
-audio::-webkit-media-controls-panel {
-  /* -webkit-justify-content: center;
-  height: 25px; */
-}
-
-audio::-webkit-media-controls-play-button {
-  display: none;
-}
-
-/* Removes the timeline */
-audio::-webkit-media-controls-timeline {
-  /* display: none !important; */
-}
-
-/* Removes the time stamp */
-audio::-webkit-media-controls-current-time-display {
-  display: none;
-}
-audio::-webkit-media-controls-time-remaining-display {
-  display: none;
+.cropped {
+  object-fit: cover;
+  height: 300px;
+  width: 1080px;
 }
 </style>
